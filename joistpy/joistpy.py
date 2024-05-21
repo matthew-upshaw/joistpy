@@ -37,9 +37,6 @@ class Designation:
     def add_property(self, name, value):
         self.properties[name] = value
 
-    def get_l360(self, span):
-        pass
-
     def __getattr__(self, name):
         if name in self.properties:
             return self.properties[name]
