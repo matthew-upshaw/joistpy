@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 name = 'joistpy'
-version = '0.1.3'
+version = '0.1.4'
 author = 'Matthew Upshaw'
 author_email = 'matthew.upshaw02@gmail.com'
 description = 'Library that acts as a database for SJI steel open web bar joist shapes for easy use in structural calculations.'
