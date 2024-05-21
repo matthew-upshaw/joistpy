@@ -7,9 +7,9 @@ author_email = 'matthew.upshaw02@gmail.com'
 description = 'Library that acts as a database for SJI steel open web bar joist shapes for easy use in structural calculations.'
 packages = find_packages()
 classifiers = [
-    'Programming Language::Python::3',
-    'License::OSI Approved::GNU General Public License v3.0',
-    'Operating System::OS Independent',
+    'Programming Language :: Python :: 3',
+    'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
+    'Operating System :: OS Independent',
 ]
 python_requires = '>=3.12'
 
