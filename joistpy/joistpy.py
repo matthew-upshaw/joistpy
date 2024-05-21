@@ -112,14 +112,14 @@ for cur_joist_type_name in filepath.keys():
                 cur_property = df[joist].to_list()[0]
                 cur_joist_name = cur_joist_type_name.split('S')[0]+joist
 
-            if cur_joist_name not in joist_dict[cur_joist_type_name].keys():
-                joist_dict[cur_joist_type_name][cur_joist_name] = {}
-
-            joist_dict[cur_joist_type_name][cur_joist_name][cur_property] = cur_property
+                if cur_joist_name not in joist_dict[cur_joist_type_name].keys():
+                    joist_dict[cur_joist_type_name][cur_joist_name] = {}
+    
+                joist_dict[cur_joist_type_name][cur_joist_name][cur_property_name] = cur_property
 
         else:
             joist_des = df.columns[1:].to_list()
-
+    
             for joist in joist_des:
                 cur_property = [df['Span'].to_list(), df[joist].to_list()]
                 cur_joist_name = cur_joist_type_name.split('S')[0]+joist
