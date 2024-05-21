@@ -1,4 +1,5 @@
 # Import dependencies
+import numpy as np
 import os
 import pandas as pd
 
@@ -37,8 +38,33 @@ class Designation:
     def add_property(self, name, value):
         self.properties[name] = value
 
-    def get_l360(self, span):
-        pass
+    def get_wl360(self, span):
+        l360 = self.l_360
+
+        span_i = [i for i in l360[0] if span > i][-1]
+        span_j = [i for i in l360[0] if span <= i][0]
+
+        idx_i = l360[0].index(span_i)
+        idx_j = l360[0].index(span_j)
+
+        if np.isnan(l360[1][idx_i]):
+            wl360 = 550.0
+        elif np.isnan(l360[1][idx_j]):
+            wl360 = 0.0
+        elif not np.isnan(l360[1][idx_i]) and not np.isnan(l360[1][idx_j]):
+            w_i = l360[1][idx_i]
+            w_j = l360[1][idx_j]
+
+            wl360 = ((span-span_i)/(span_j-span_i))*(w_j-w_i)+w_i
+
+        return wl360
+    
+    def get_mom_inertia(self, span):
+        wl360 = self.get_wl360(span=span)
+
+        mom_inertia = 26.767*(wl360)*(span-0.33)**3*(10**(-6))
+
+        return mom_inertia
 
     def __getattr__(self, name):
         if name in self.properties:
