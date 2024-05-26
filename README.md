@@ -39,3 +39,7 @@ area = joist.get_eq_area() # equivalent cross-sectional are in in^2
 mom_inertia = joist.get_mom_inertia(span) # moment of inertia in in^4
 wl360 = joist.get_wl360(span) # load that produced L/360 deflection for the span in plf
 ```
+
+### Additional Information
+- [Documentation]
+- [PyPI Release](https://pypi.org/project/joistpy/)
