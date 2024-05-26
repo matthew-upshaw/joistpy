@@ -4,7 +4,7 @@ Usage
 .. _installation:
 
 Installation
-============
+------------
 
 To use JoistPy, first install it using pip:
 
@@ -20,8 +20,8 @@ first import the module.
 	from joistpy import sji
 
 The library includes all standard K, LH, and
- DLH joist designations. To access the K-Series
- joists, for example, use dot notation for the 
+DLH joist designations. To access the K-Series
+joists, for example, use dot notation for the 
 group of designations.
 
 .. code-block:: python
@@ -29,9 +29,9 @@ group of designations.
 	sji.K_Series
 
 From there specific designations can be obtained 
-in a similar manner. Note that the prefix 'K_',
- 'LH_', or 'DLH_' must be added to the joist
- designation in order to properly access it via 
+in a similar manner. Note that the prefix K,
+LH, or DLH followed by an underscore must be added to the joist
+designation in order to properly access it via 
 dot notation.
 
 .. code-block:: python
@@ -41,8 +41,8 @@ dot notation.
 Properties can be obtained in a similar manner. 
 Properties that can be accessed include approximate 
 weight in plf and load tables for L/360 deflection
- criteria and Total Safe Load. Span values are in ft
- and load table values are in plf.
+criteria and Total Safe Load. Span values are in ft
+and load table values are in plf.
 
 .. code-block:: python
 

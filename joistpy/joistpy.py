@@ -252,21 +252,39 @@ class Designation:
             the load in plf that produces a deflection of L/360 for the
             designation and input span
         """
+        # Ensure only non-zero integers get passed to the function
+        if span <= 0:
+            span = 1
+
         # Get l_360 property for current shape
         l360 = self.l_360
 
+        defined_spans = [i for i in l360[1] if not np.isnan(i)]
+        min_span = l360[0][l360[1].index(defined_spans[0])]
+        max_span = l360[0][l360[1].index(defined_spans[-1])]
+
         # Interpolate between spans to get the load that produces L/360 deflection
-        span_i = [i for i in l360[0] if span > i][-1]
-        span_j = [i for i in l360[0] if span <= i][0]
+        try:
+            span_i = [i for i in l360[0] if span > i][-1]
+            span_j = [i for i in l360[0] if span <= i][0]
+        except IndexError:
+            if len([i for i in l360[0] if span > i]) == 0:
+                span_i = 0
+            elif len([i for i in l360[0] if span <= i]) == 0:
+                span_j = 60
 
-        idx_i = l360[0].index(span_i)
-        idx_j = l360[0].index(span_j)
+        try:
+            idx_i = l360[0].index(span_i)
+            idx_j = l360[0].index(span_j)
+        except ValueError:
+            idx_i = l360[0][-1]
+            idx_j = l360[0][-1]
 
-        if np.isnan(l360[1][idx_i]):
+        if span < min_span:
             wl360 = 550.0
-        elif np.isnan(l360[1][idx_j]):
+        elif span > max_span:
             wl360 = 0.0
-        elif not np.isnan(l360[1][idx_i]) and not np.isnan(l360[1][idx_j]):
+        elif min_span <= span and span <= max_span:
             w_i = l360[1][idx_i]
             w_j = l360[1][idx_j]
 

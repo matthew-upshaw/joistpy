@@ -15,12 +15,12 @@ To use the joistpy library, first import the module
 from joistpy import sji
 ```
 
-The library includes all standard K, LH, and DLH joist designations. To access the K-Series joists, for example, use dot notation for the group of designations.
+The library includes all standard K-Series joist designations. To access the K-Series joists use dot notation for the group of designations.
 ```python
 sji.K_Series
 ```
 
-From there specific designations can be obtained in a similar manner. Note that the prefix 'K_', 'LH_', or 'DLH_' must be added to the joist designation in order to properly access it via dot notation.
+From there specific designations can be obtained in a similar manner. Note that the prefix 'K_' must be added to the joist designation in order to properly access it via dot notation.
 ```python
 joist = sji.K_Series.K_8K1
 ```
