@@ -1,3 +1,5 @@
 furo
+numpy==1.26.4
+pandas==2.2.2
 sphinx
 joistpy==1.0.0
