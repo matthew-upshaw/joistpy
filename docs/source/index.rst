@@ -10,11 +10,9 @@ Welcome to JoistPy's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+Contents
+--------
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+	usage
+	api_documentation
