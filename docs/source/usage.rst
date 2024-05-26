@@ -9,12 +9,14 @@ Installation
 To use JoistPy, first install it using pip:
 
 .. code-block:: bash
+
 	pip install joistpy
 
 To access the properties within the library, 
 first import the module.
 
 .. code-block:: python
+
 	from joistpy import sji
 
 The library includes all standard K, LH, and
@@ -23,6 +25,7 @@ The library includes all standard K, LH, and
 group of designations.
 
 .. code-block:: python
+
 	sji.K_Series
 
 From there specific designations can be obtained 
@@ -32,6 +35,7 @@ in a similar manner. Note that the prefix 'K_',
 dot notation.
 
 .. code-block:: python
+
 	joist = sji.K_Series.K_8K1
 
 Properties can be obtained in a similar manner. 
@@ -41,6 +45,7 @@ weight in plf and load tables for L/360 deflection
  and load table values are in plf.
 
 .. code-block:: python
+
 	weight = joist.weight
 	l360 = joist.l360
 	total = joist.total
@@ -49,6 +54,7 @@ Additonal properties can be calculated by using the
 Designation class methods.
 
 .. code-block:: python
+
 	span = 17.5 # joist span in ft
 	area = joist.get_eq_area() # equivalent cross-sectional are in in^2
 	mom_inertia = joist.get_mom_inertia(span) # moment of inertia in in^4
