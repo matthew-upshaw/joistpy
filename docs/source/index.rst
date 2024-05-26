@@ -10,6 +10,12 @@ Welcome to JoistPy's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+JoistPy is a library that acts as a database for SJI steel open web bar 
+joist shapes for easy use in structural calculations.
+
+Check out the :doc:`usage` section for further information, including how to
+:ref:`install <Installation>`.
+
 Contents
 --------
 
