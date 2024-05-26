@@ -11,7 +11,7 @@ pip install joistpy
 ### Usage
 To use the joistpy library, first import the module
 
-```
+```python
 from steelpy import sji
 ```
 
