@@ -1,6 +1,6 @@
 # JoistPy
 
-`joistpy` is a library that acts as a database for SJI steel open web bar joist shapes for easy use in structural calculations.
+JoistPy is a library that acts as a database for SJI steel open web bar joist shapes for easy use in structural calculations.
 
 ## Contents
 * [Installation](#installation)
