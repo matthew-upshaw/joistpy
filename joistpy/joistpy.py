@@ -1,9 +1,7 @@
-# Import dependencies
 import numpy as np
 import os
 import pandas as pd
 
-# Define classes
 class Joist:
     """
     A class to represent a collection of joist types and designations.
