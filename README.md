@@ -41,5 +41,5 @@ wl360 = joist.get_wl360(span) # load that produced L/360 deflection for the span
 ```
 
 ### Additional Information
-- [Documentation]
+- [Documentation](https://joistpy.readthedocs.io/en/latest/index.html)
 - [PyPI Release](https://pypi.org/project/joistpy/)
