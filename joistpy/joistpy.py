@@ -311,6 +311,9 @@ class Designation:
             the load maximum safe load in plf  for the input span and joist
             designation per the SJI joist tables
         """
+        if not isinstance(span, (int, float)):
+            raise TypeError('span must be a positive int or float')
+            
         # Ensure only non-zero integers get passed to the function
         if span <= 0:
             span = 1
