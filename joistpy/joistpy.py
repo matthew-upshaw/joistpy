@@ -312,7 +312,7 @@ class Designation:
         if span <= 0:
             span = 1
 
-        # Get l_360 property for current shape
+        # Get total property for current shape
         total = self.total
 
         defined_spans = [i for i in total[1] if not np.isnan(i)]
@@ -337,7 +337,7 @@ class Designation:
             idx_j = total[0][-1]
 
         if span < min_span:
-            wtoal = 550.0
+            wtotal = 550.0
         elif span > max_span:
             wtotal = 0.0
         elif min_span <= span and span <= max_span:
