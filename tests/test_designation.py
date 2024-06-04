@@ -23,25 +23,31 @@ def test_get_eq_area():
     k_14k1.get_eq_area()
 
 def test_get_mom_inertia():
-    k_14k1.get_mom_inertia()
+    k_14k1.get_mom_inertia(span=15)
 
 def test_get_wl360_valid_span():
     k_14k1.get_wl360(span=15)
 
-def test_get_wl360_invalid_span():
-    k_14k1.get_wl360(span=-1)
+def test_get_wl360_invalid_span_low():
+    k_14k1.get_wl360(span=-5)
+
+def test_get_wl360_invalid_span_high():
+    k_14k1.get_wl360(span=70)
 
 def test_get_wl360_invalid_span_type():
     with pytest.raises(TypeError):
-        k_14k1.get_wl360('5')
+        k_14k1.get_wl360(span='5')
 
 def test_get_wtotal_valid_span():
     k_14k1.get_wtotal(span=15)
 
-def test_get_wtotal_invalid_span():
-    k_14k1.get_total(span=-1)
+def test_get_wtotal_invalid_span_low():
+    k_14k1.get_wtotal(span=-5)
+
+def test_get_wtotal_invalid_span_high():
+    k_14k1.get_wtotal(span=70)
 
 def test_get_wtotal_invalid_span_type():
     with pytest.raises(TypeError):
-        k_14k1.get_wtotal('5')
+        k_14k1.get_wtotal(span='5')
 
