@@ -291,6 +291,62 @@ class Designation:
             wl360 = ((span-span_i)/(span_j-span_i))*(w_j-w_i)+w_i
 
         return wl360
+    
+    def get_wtotal(self, span):
+        """
+        Calculates the maximum safe load in plf for the input span and joist
+        designation per the SJI joist tables.
+
+        Parameters
+        ----------
+        span : float or int
+            the span of the joist in ft
+
+        Returns
+        -------
+        wtotal : float
+            the load maximum safe load in plf  for the input span and joist
+            designation per the SJI joist tables
+        """
+        # Ensure only non-zero integers get passed to the function
+        if span <= 0:
+            span = 1
+
+        # Get l_360 property for current shape
+        total = self.total
+
+        defined_spans = [i for i in total[1] if not np.isnan(i)]
+        min_span = total[0][total[1].index(defined_spans[0])]
+        max_span = total[0][total[1].index(defined_spans[-1])]
+
+        # Interpolate between spans to get the load that produces L/360 deflection
+        try:
+            span_i = [i for i in total[0] if span > i][-1]
+            span_j = [i for i in total[0] if span <= i][0]
+        except IndexError:
+            if len([i for i in total[0] if span > i]) == 0:
+                span_i = 0
+            elif len([i for i in total[0] if span <= i]) == 0:
+                span_j = 60
+
+        try:
+            idx_i = total[0].index(span_i)
+            idx_j = total[0].index(span_j)
+        except ValueError:
+            idx_i = total[0][-1]
+            idx_j = total[0][-1]
+
+        if span < min_span:
+            wtoal = 550.0
+        elif span > max_span:
+            wtotal = 0.0
+        elif min_span <= span and span <= max_span:
+            w_i = total[1][idx_i]
+            w_j = total[1][idx_j]
+
+            wtotal = ((span-span_i)/(span_j-span_i))*(w_j-w_i)+w_i
+
+        return wtotal
 
 # Define property filepath dictionary
 filepath = {
