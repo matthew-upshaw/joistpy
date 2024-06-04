@@ -252,6 +252,9 @@ class Designation:
             the load in plf that produces a deflection of L/360 for the
             designation and input span
         """
+        if not isinstance(span, (int, float)):
+            raise TypeError('span must be a positive int or float')
+
         # Ensure only non-zero integers get passed to the function
         if span <= 0:
             span = 1

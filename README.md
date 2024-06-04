@@ -1,3 +1,9 @@
+<p align="center">
+    <a href="https://github.com/matthew-upshaw/joistpy/actions/workflows/tests.yml"><img alt="Tests" src="https://github.com/matthew-upshaw/joistpy/actions/workflows/tests.yaml/badge.svg"></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://coveralls.io/github/matthew-upshaw/joistpy?branch=main"><img alt="Coverage Status" src="https://coveralls.io/repos/github/matthew-upshaw/joistpy/badge.svg?branch=main&v=0.1.2"></a>&nbsp;&nbsp;&nbsp;
+    <a href="https://github.com/matthew-upshaw/joistpy/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>&nbsp;&nbsp;&nbsp;
+</p>
+
 # JoistPy
 
 JoistPy is a library that acts as a database for SJI steel open web bar joist shapes for easy use in structural calculations.
