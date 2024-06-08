@@ -12,7 +12,7 @@ sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 project = 'JoistPy'
 copyright = '2024, Matthew Upshaw'
 author = 'Matthew Upshaw'
-release = '1.0.2'
+release = '1.0.3'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

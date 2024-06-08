@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "joistpy"
-version = "1.0.2"
+version = "1.0.3"
 description = "JoistPy is a library that acts as a database for SJI steel open web bar joist shapes for easy use in structural calculations."
 authors = ["Matthew Upshaw <matthew.upshaw02@gmail.com>"]
 license = "MIT License"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10"
 numpy = "1.26.4"
 pandas = "2.2.2"
 
