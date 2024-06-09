@@ -21,21 +21,25 @@ To use the joistpy library, first import the module
 from joistpy import sji
 ```
 
-The library includes all standard K-Series joist designations. To access the K-Series joists use dot notation for the group of designations.
+The library includes all standard K-, and KCS-Series joist designations. To access the K-Series joists use dot notation for the group of designations.
 ```python
 sji.K_Series
 ```
 
-From there specific designations can be obtained in a similar manner. Note that the prefix 'K_' must be added to the joist designation in order to properly access it via dot notation.
+The KCS-Series joists can be accessed in a similar fashion.
+
+From there specific designations can be obtained in a similar manner. Note that the prefix 'K_' or 'KCS_', as applicable, must be added to the joist designation in order to properly access it via dot notation.
 ```python
-joist = sji.K_Series.K_8K1
+k_joist = sji.K_Series.K_8K1
+kcs_joist = sji.KCS_Series.KCS_14KCS1
 ```
 
-Properties can be obtained in a similar manner. Properties that can be accessed include approximate weight in plf and load tables for L/360 deflection criteria and Total Safe Load. Span values are in ft and load table values are in plf.
+Properties can be obtained in a similar manner. Properties that can be accessed include approximate weight in plf and load tables for L/360 deflection criteria and Total Safe Load. Span values are in ft and load table values are in plf. Shear capacity in lbs can also be accessed for KCS joists.
 ```python
-weight = joist.weight
-l360 = joist.l_360
-total = joist.total
+weight = k_joist.weight
+l360 = k_joist.l_360
+total = k_joist.total
+shear_capacity = kcs_joist.shear_capacity
 ```
 
 Additonal properties can be calculated by using the Designation class methods.
