@@ -361,6 +361,12 @@ filepath = {
         'total':'K_Total.csv',
         'weight':'K_weight.csv',
     },
+    'KCS_Series':{
+        'l_360':'KCS_L_360.csv',
+        'total':'KCS_Total.csv',
+        'weight':'KCS_weight.csv',
+        'shear_capacity':'KCS_shear_capacity.csv',
+    },
 }
 
 # Get the directory of the currently executing module
@@ -388,12 +394,12 @@ for cur_joist_type_name in filepath.keys():
                     cur_list.append(float(item))
             df[col] = cur_list
 
-        if cur_property_name == 'weight':
+        if cur_property_name == 'weight' or cur_property_name == 'shear_capacity':
             joist_des = df.columns.to_list()
 
             for joist in joist_des:
                 cur_property = df[joist].to_list()[0]
-                cur_joist_name = cur_joist_type_name.split('S')[0]+joist
+                cur_joist_name = cur_joist_type_name.split('Series')[0]+joist
 
                 if cur_joist_name not in joist_dict[cur_joist_type_name].keys():
                     joist_dict[cur_joist_type_name][cur_joist_name] = {}
@@ -405,7 +411,7 @@ for cur_joist_type_name in filepath.keys():
     
             for joist in joist_des:
                 cur_property = [df['Span'].to_list(), df[joist].to_list()]
-                cur_joist_name = cur_joist_type_name.split('S')[0]+joist
+                cur_joist_name = cur_joist_type_name.split('Series')[0]+joist
     
                 if cur_joist_name not in joist_dict[cur_joist_type_name].keys():
                     joist_dict[cur_joist_type_name][cur_joist_name] = {}
